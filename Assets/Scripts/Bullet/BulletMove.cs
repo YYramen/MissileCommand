@@ -7,12 +7,33 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// 弾の動き
 /// </summary>
-public class BulletMove : MonoBehaviour, IPointerClickHandler
+public class BulletMove : MonoBehaviour
 {
     [SerializeField] float _bulletSpeed = 3f;
+    [SerializeField] GameObject _explodePrefab;
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void Update()
     {
-        this.transform.position = eventData.position;
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Move();
+        }
+    }
+
+    /// <summary>
+    /// クリックされた地点に弾が動く
+    /// </summary>
+    private void Move()
+    {
+        var targetPos = Input.mousePosition;
+
+        this.transform.DOMove(targetPos, _bulletSpeed)
+            .SetEase(Ease.Linear)
+            .onComplete(OnCompleteMove);
+    }
+
+    private void OnCompleteMove()
+    {
+        Instantiate(_explodePrefab);
     }
 }
