@@ -539,6 +539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletSpeed: 1
+  _explodePrefab: {fileID: 4172662122319322439, guid: e1146f2449fa2554abbb1a94225f118f, type: 3}
+  _canvasObj: {fileID: 1592194098}
 --- !u!1 &938520252
 GameObject:
   m_ObjectHideFlags: 0

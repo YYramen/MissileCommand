@@ -11,6 +11,7 @@ public class BulletMove : MonoBehaviour
 {
     [SerializeField] float _bulletSpeed = 3f;
     [SerializeField] GameObject _explodePrefab;
+    [SerializeField] GameObject _canvasObj;
 
     private void Update()
     {
@@ -29,11 +30,10 @@ public class BulletMove : MonoBehaviour
 
         this.transform.DOMove(targetPos, _bulletSpeed)
             .SetEase(Ease.Linear)
-            .onComplete(OnCompleteMove);
-    }
-
-    private void OnCompleteMove()
-    {
-        Instantiate(_explodePrefab);
+            .OnComplete(() =>
+            {
+                Instantiate(_explodePrefab, this.transform.position, Quaternion.identity, _canvasObj.transform);
+                Debug.Log("Move Completed");
+            });
     }
 }
