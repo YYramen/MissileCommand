@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4172662122319322434}
   - component: {fileID: 4172662122319322437}
   - component: {fileID: 4172662122319322432}
-  - component: {fileID: 4312193020851974398}
+  - component: {fileID: 4146396229743825824}
+  - component: {fileID: 7849487112454785176}
   m_Layer: 5
   m_Name: Explode
   m_TagString: Untagged
@@ -115,7 +116,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 42.76
---- !u!114 &4312193020851974398
+--- !u!114 &4146396229743825824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,4 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9291868325689f4792f81da76a45fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeTime: 1.4
+--- !u!114 &7849487112454785176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172662122319322439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a17954628d0e8a48a8468a478ab0b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
