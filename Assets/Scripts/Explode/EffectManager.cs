@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class EffectManager : MonoBehaviour
 {
     [SerializeField]
-    private Button _button;
+    private GameObject _bulletPrefab;
 
     [SerializeField]
     private ExplosionEffect _effectPrefab;
@@ -27,12 +27,12 @@ public class EffectManager : MonoBehaviour
         //破棄されたときにPoolを解放する
         this.OnDestroyAsObservable().Subscribe(_ => _effectPool.Dispose());
 
-        //ボタンが押されたらエフェクト生成
-        _button.OnClickAsObservable()
+        //BulletプレハブがDestroyしたらEffectプレハブを生成
+        _bulletPrefab.OnDestroyAsObservable()
             .Subscribe(_ =>
             {
                 //ランダムな場所
-                var position = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
+                var position = this.transform.position;
 
                 //poolから1つ取得
                 var effect = _effectPool.Rent();

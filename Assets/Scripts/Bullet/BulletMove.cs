@@ -9,8 +9,13 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class BulletMove : MonoBehaviour
 {
-    [SerializeField] float _bulletSpeed = 3f;
-    [SerializeField] GameObject _explodePrefab;
+    [SerializeField]
+    float _bulletSpeed = 3f;
+    [SerializeField]
+    GameObject _explodePrefab;
+
+    public GameObject ExplodePrefab { get => _explodePrefab; }
+
     //[SerializeField] GameObject _canvasObj;
 
     private void Update()

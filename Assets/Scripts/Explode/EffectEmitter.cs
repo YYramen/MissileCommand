@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EffectEmitter : MonoBehaviour
 {
-    
 
     public void Play()
     {
