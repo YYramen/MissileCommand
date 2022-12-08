@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class TestExtraEditor : EditorWindow
+public class Test2 : EditorWindow
 {
     private string text = "";
 
-    [MenuItem("Test/ExtraEditor/Sample", false, 1)]
+    [MenuItem("Test/ExtraEditor/aaa", priority = 1, validate = true)]
     private static void ShowWindow()
     {
-        TestExtraEditor window = GetWindow<TestExtraEditor>();
+        Test2 window = GetWindow<Test2>();
         window.titleContent = new GUIContent("サンプル");
     }
 
@@ -22,10 +22,11 @@ public class TestExtraEditor : EditorWindow
 
         //GUILayout.Button("コンソールウィンドウに出力");
 
-        if (GUILayout.Button("コンソールに出力！！"))
+        if (GUILayout.Button("コンソールに出力"))
         {
             Debug.Log(text);
         }
+
 
     }
 }
