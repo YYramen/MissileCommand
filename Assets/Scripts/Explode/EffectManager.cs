@@ -23,6 +23,7 @@ public class EffectManager : MonoBehaviour
     {
         //オブジェクトプールを生成
         _effectPool = new EffectPool(_hierarchyTransform, _effectPrefab);
+        Debug.Log("プール作成");
 
         //破棄されたときにPoolを解放する
         this.OnDestroyAsObservable().Subscribe(_ => _effectPool.Dispose());
@@ -31,7 +32,7 @@ public class EffectManager : MonoBehaviour
         _bulletPrefab.OnDestroyAsObservable()
             .Subscribe(_ =>
             {
-                //ランダムな場所
+                //Destroyした場所
                 var position = this.transform.position;
 
                 //poolから1つ取得
